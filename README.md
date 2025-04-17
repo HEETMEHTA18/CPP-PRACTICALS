@@ -2,7 +2,7 @@
 
 This repository contains a collection of C++ practicals  covering various topics such as Object-Oriented Programming, procedural programming, functions & recursion, inheritance, and templates. Each file is named using the format `practicalX_Y.cpp` (e.g., `practical1_1.cpp`).
 
-## Quick Summary
+##  Summary
 
 - **practical1_1.cpp 💰**:  
   Bank Account Management – deposit, withdrawal, and balance display with error handling.
