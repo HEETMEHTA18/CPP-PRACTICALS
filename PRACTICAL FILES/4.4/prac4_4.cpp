@@ -1,3 +1,17 @@
+/*In a bid to design an efficient and user-friendly banking system, a structure was proposed that mirrors
+the real-world operations of various account types. The foundation of the system is a base class
+representing a generic bank account, encapsulating essential details such as account number and
+balance. Building on this foundation, two specialized account types were created: a savings account,
+which includes an interest rate as an additional feature, and a current account, which allows an
+overdraft limit to accommodate specific customer needs.
+To ensure proper initialization and cleanup of account objects, constructors and destructors were
+implemented. Essential banking operations such as deposits and withdrawals were made available for
+both account types, allowing users to perform and manage their transactions effectively. The system
+also accounted for the need to track and manage transaction history, enabling operations such as
+undoing the last transaction. This was achieved by simulating a mechanism to store a sequence of
+transactions for each account type, providing insight into different ways of managing and organizing
+data.*/
+
 #include <iostream>
 #include <vector>
 #include <string>
