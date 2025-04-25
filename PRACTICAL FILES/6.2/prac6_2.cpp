@@ -16,17 +16,35 @@ using namespace std;
 class Point {
     int x, y;
 public:
+    // Constructor to initialize the point
     Point(int xx, int yy) : x(xx), y(yy) {}
-    Point& shift(int dx, int dy) {
-        x += dx; y += dy;
-        return *this;
+
+    // Shift method using pass-by-reference for dx and dy
+    Point& shift(int &dx, int &dy) {
+        x += dx; // Update x-coordinate
+        y += dy; // Update y-coordinate
+        return *this; // Return the current object for method chaining
     }
-    void print() const { std::cout << "(" << x << "," << y << ")\n"; }
+
+    // Print method to display the point
+    void print() const { 
+        std::cout << "(" << x << "," << y << ")\n"; 
+    }
 };
 
 int main() {
-    Point p(0,0);
-    p.shift(2,3).shift(-1,4);
+    Point p(0, 0); // Create a Point object at (0, 0)
+
+    // Shift the point using method chaining
+    int dx1 = 1, dy1 = 33;
+    int dx2 = 1, dy2 = -14;
+    int dx3 = 1, dy3 = 0;
+    // int dx4 = 0, dy4 = 1;
+    p.shift(dx1, dy1).shift(dx2, dy2); // Apply shifts
+    p.shift(dx1, dy1).shift(dx2, dy2).shift(dx1, dy1);
+     // Apply shifts
+
+    // Print the final coordinates
     p.print();
     return 0;
 }
