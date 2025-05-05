@@ -3,18 +3,42 @@
 #include <sstream>
 using namespace std;
 
-int main(int argc, char* argv[]) {
-    if (argc < 2) { cerr << "Usage: " << argv[0] << " <file>\n"; return 1; }
-    ifstream file(argv[1]);
-    if (!file) { cerr << "Error opening file\n"; return 1; }
-    string line, word;
-    int lines=0, words=0, chars=0;
-    while (getline(file, line)) {
-        ++lines;
-        chars += line.size() + 1;
-        stringstream ss(line);
-        while (ss >> word) ++words;
+class FileProcessor {
+    string filename;
+    int lines, words, chars;
+
+public:
+    // Constructor to initialize and process the file
+    FileProcessor(const string& fname) : filename(fname), lines(0), words(0), chars(0) {
+        processFile();
     }
-    cout << "Lines: " << lines << " Words: " << words << " Chars: " << chars << endl;
+
+    // Method to process the file
+    void processFile() {
+        ifstream file(filename);
+        if (!file) {
+            cerr << "Error opening file: " << filename << endl;
+            return;
+        }
+
+        string line, word;
+        while (getline(file, line)) {
+            ++lines;
+            chars += line.size() + 1; // Include newline character
+            stringstream ss(line);
+            while (ss >> word) ++words;
+        }
+    }
+
+    // Method to display the statistics
+    void displayStats() const {
+        cout << "Lines: " << lines << " Words: " << words << " Chars: " << chars << endl;
+    }
+};
+
+int main() {
+    // File name is fixed as "demo.txt"
+    FileProcessor processor("helloworld.txt");
+    processor.displayStats();
     return 0;
 }
