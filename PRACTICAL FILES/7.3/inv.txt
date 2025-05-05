@@ -1,1 +1,4 @@
-hello 1 2
+apple 100 15.2
+kaju 1000 20.5
+urval  1 1
+ aryan 1 5
